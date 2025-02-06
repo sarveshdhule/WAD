@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "1cbc",
+      "email": "shreyash21@gmail.com",
+      "password": "Shreyash@123"
+    },
+    {
+      "id": "2dab",
+      "email": "shreyash21@gmail.com",
+      "password": "Shreyash@123"
+    },
+    {
+      "id": "f54e",
+      "email": "shreyash@gmail.com",
+      "password": "Shreyash@123"
+    },
+    {
+      "id": "1bf7",
+      "email": "shreyash@gmail.com",
+      "password": "Shreyash@123"
+    },
+    {
+      "id": "9245",
+      "email": "shreyash22@gmail.com",
+      "password": "Shreyash@123"
+    }
+  ]
+}
