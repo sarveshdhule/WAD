@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="authApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="AuthController as authCtrl">
+    <div class="form-container">
+        <h2>Login</h2>
+        <form ng-submit="authCtrl.login()" name="loginForm" novalidate>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" ng-model="authCtrl.loginData.email" required>
+                <span ng-show="loginForm.email.$touched && loginForm.email.$error.required" class="error">Email is required.</span>
+                <span ng-show="loginForm.email.$touched && loginForm.email.$error.email" class="error">Invalid email.</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" ng-model="authCtrl.loginData.password" required>
+                <span ng-show="loginForm.password.$touched && loginForm.password.$error.required" class="error">Password is required.</span>
+            </div>
+            <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+        </form>
+        <p>Don't have an account? <a href="index.html">Register here</a>.</p>
+    </div>
+</body>
+</html>

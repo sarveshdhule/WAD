@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="authApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="AuthController as authCtrl">
+    <div class="form-container">
+        <h2>Register</h2>
+        <form ng-submit="authCtrl.register()" name="registerForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" ng-model="authCtrl.user.username" required>
+                <span ng-show="registerForm.username.$touched && registerForm.username.$error.required" class="error">Username is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" ng-model="authCtrl.user.email" required>
+                <span ng-show="registerForm.email.$touched && registerForm.email.$error.required" class="error">Email is required.</span>
+                <span ng-show="registerForm.email.$touched && registerForm.email.$error.email" class="error">Invalid email.</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" ng-model="authCtrl.user.password" required minlength="6">
+                <span ng-show="registerForm.password.$touched && registerForm.password.$error.required" class="error">Password is required.</span>
+                <span ng-show="registerForm.password.$touched && registerForm.password.$error.minlength" class="error">Password must be at least 6 characters.</span>
+            </div>
+            <button type="submit" ng-disabled="registerForm.$invalid">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+</body>
+</html>
